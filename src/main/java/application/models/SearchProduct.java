@@ -2,74 +2,63 @@ package application.models;
 
 public class SearchProduct {
 
-    String description, picture_url, brand, model, price, type, refId;
+    private int line_id, speech_number;
+    private String play_name, line_number, speaker, text_entry;
 
-    public SearchProduct(String description, String picture_url, String brand, String model, String price,  String refId) {
-        this.description = description;
-        this.picture_url = picture_url;
-        this.brand = brand;
-        this.model = model;
-        this.price = price;
-        this.refId = refId;
+    public SearchProduct(int line_id, int speech_number, String play_name, String line_number, String speaker, String text_entry) {
+        this.line_id = line_id;
+        this.speech_number = speech_number;
+        this.play_name = play_name;
+        this.line_number = line_number;
+        this.speaker = speaker;
+        this.text_entry = text_entry;
     }
 
-    public String getRefId() {
-        return refId;
+    public int getLine_id() {
+        return line_id;
     }
 
-    public void setRefId(String refId) {
-        this.refId = refId;
+    public void setLine_id(int line_id) {
+        this.line_id = line_id;
     }
 
-    public String toString(){
-        return brand;
+    public int getSpeech_number() {
+        return speech_number;
     }
 
-    public String getDescription() {
-        return description;
+    public void setSpeech_number(int speech_number) {
+        this.speech_number = speech_number;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getPlay_name() {
+        return play_name;
     }
 
-    public String getPicture_url() {
-        return picture_url;
+    public void setPlay_name(String play_name) {
+        this.play_name = play_name;
     }
 
-    public void setPicture_url(String picture_url) {
-        this.picture_url = picture_url;
+    public String getLine_number() {
+        return line_number;
     }
 
-    public String getBrand() {
-        return brand;
+    public void setLine_number(String line_number) {
+        this.line_number = line_number;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public String getSpeaker() {
+        return speaker;
     }
 
-    public String getModel() {
-        return model;
+    public void setSpeaker(String speaker) {
+        this.speaker = speaker;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public String getText_entry() {
+        return text_entry;
     }
 
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public void setText_entry(String text_entry) {
+        this.text_entry = text_entry;
     }
 }

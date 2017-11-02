@@ -41,6 +41,7 @@ public class SearchController {
         } else {
             result.setMsg("success");
         }
+        result.setSize("" + products.size());
         result.setSearchProductList(products);
         return ResponseEntity.ok(result);
 

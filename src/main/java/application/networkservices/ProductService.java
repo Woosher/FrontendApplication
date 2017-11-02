@@ -25,7 +25,7 @@ public class ProductService {
 
     List<SearchProduct> theList = new ArrayList<>();
 
-    private static final String base_url = "http://localhost:8082";
+    private static final String base_url = "http://82.211.197.145:17094";
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -39,13 +39,13 @@ public class ProductService {
         List<SearchProduct> myObjects = new ArrayList<>();
         for(int i = 0; i<jsonArray.length(); i++){
             JSONObject object = jsonArray.getJSONObject(i);
-            String description = object.getString("short_description");
-            String model = object.getString("model");
-            String brand = object.getString("brand");
-            String picture_url = object.getString("picture_url");
-            String price = object.getString("price");
-            String refId = object.getString("refId");
-            SearchProduct searchProduct = new SearchProduct(description,picture_url,brand,model,price,refId);
+            int line_id = object.getInt("line_id");
+            String play_name = object.getString("play_name");
+            int speech_number = object.getInt("speech_number");
+            String line_number = object.getString("line_number");
+            String speaker = object.getString("speaker");
+            String text_entry = object.getString("text_entry");
+            SearchProduct searchProduct = new SearchProduct(line_id,speech_number,play_name,line_number,speaker,text_entry);
             myObjects.add(searchProduct);
         }
         theList.clear();

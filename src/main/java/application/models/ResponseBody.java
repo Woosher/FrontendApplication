@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ResponseBody {
 
-    String msg;
+    String msg, size;
     List<SearchProduct> searchProductList = new ArrayList<>();
 
     public String getMsg() {
@@ -14,6 +14,14 @@ public class ResponseBody {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 
     public List<SearchProduct> getSearchProductList() {
