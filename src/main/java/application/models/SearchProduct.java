@@ -2,14 +2,23 @@ package application.models;
 
 public class SearchProduct {
 
-    String description, picture_url, brand, model, price, type;
+    String description, picture_url, brand, model, price, type, refId;
 
-    public SearchProduct(String description, String picture_url, String brand, String model, String price) {
+    public SearchProduct(String description, String picture_url, String brand, String model, String price,  String refId) {
         this.description = description;
         this.picture_url = picture_url;
         this.brand = brand;
         this.model = model;
         this.price = price;
+        this.refId = refId;
+    }
+
+    public String getRefId() {
+        return refId;
+    }
+
+    public void setRefId(String refId) {
+        this.refId = refId;
     }
 
     public String toString(){

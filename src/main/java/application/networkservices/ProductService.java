@@ -25,25 +25,27 @@ public class ProductService {
 
     List<SearchProduct> theList = new ArrayList<>();
 
+    private static final String base_url = "http://localhost:8082";
+
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     public List<SearchProduct> findProducts(String query){
-        final String uri = "http://localhost:8081/items/searchitems";
+        final String uri = base_url + "/api/v1/searchitems";
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(uri)
                 .queryParam("query", query);
-
         ResponseEntity<String> result = getUrl(builder);
         JSONObject jsonObject = new JSONObject(result.getBody());
         JSONArray jsonArray = jsonObject.getJSONArray("search_results");
         List<SearchProduct> myObjects = new ArrayList<>();
         for(int i = 0; i<jsonArray.length(); i++){
             JSONObject object = jsonArray.getJSONObject(i);
-            String description = object.getString("description");
+            String description = object.getString("short_description");
             String model = object.getString("model");
             String brand = object.getString("brand");
             String picture_url = object.getString("picture_url");
             String price = object.getString("price");
-            SearchProduct searchProduct = new SearchProduct(description,picture_url,brand,model,price);
+            String refId = object.getString("refId");
+            SearchProduct searchProduct = new SearchProduct(description,picture_url,brand,model,price,refId);
             myObjects.add(searchProduct);
         }
         theList.clear();
