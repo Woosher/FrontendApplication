@@ -14,7 +14,6 @@ public class MainController {
 
     @GetMapping("/")
     public String index() {
-        log.info("HELLOOOOO");
         return "index";
     }
 
