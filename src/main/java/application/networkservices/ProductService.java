@@ -41,7 +41,11 @@ public class ProductService {
             JSONObject object = jsonArray.getJSONObject(i);
             int line_id = object.getInt("line_id");
             String play_name = object.getString("play_name");
-            int speech_number = object.getInt("speech_number");
+            int speech_number = 0;
+            try{
+                speech_number = object.getInt("speech_number");
+            }catch (Exception e){
+            }
             String line_number = object.getString("line_number");
             String speaker = object.getString("speaker");
             String text_entry = object.getString("text_entry");
